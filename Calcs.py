@@ -11,3 +11,13 @@ def findClosestEnemy(enemies, x, y):
             smallest = distance
             sI = i
     return enemies[sI]
+
+
+def checkCollision(enemy, projs):
+    hits = []
+    for proj in projs:
+        dist = math.dist((enemy.x, enemy.y), (proj.x, proj.y))
+        if dist < 20:
+            hits.append(proj)
+    return hits
+
